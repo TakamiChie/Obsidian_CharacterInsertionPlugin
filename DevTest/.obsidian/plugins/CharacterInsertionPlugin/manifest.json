@@ -1,0 +1,11 @@
+{
+	"id": "character-insertion-plugin",
+	"name": "Character Insertion Plugin",
+	"version": "1.0.0",
+	"minAppVersion": "1.1.16",
+	"description": "Plugin to insert a specified symbol under the cursor",
+	"author": "TakamiChie",
+	"authorUrl": "https://github.com/TakamiChie",
+	"fundingUrl": "https://poiit.me/TakamiChie/",
+	"isDesktopOnly": false
+}
