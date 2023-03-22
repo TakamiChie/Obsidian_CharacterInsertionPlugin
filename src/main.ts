@@ -1,4 +1,5 @@
-import { App, Editor, MarkdownView, Modal, Notice, Plugin, PluginSettingTab, Setting } from 'obsidian';
+import { App, Editor, EditorPosition, MarkdownView, Modal, Notice, Plugin, PluginSettingTab, Setting } from 'obsidian';
+import { switchChar } from 'worker';
 
 // Remember to rename these classes and interfaces!
 
@@ -39,6 +40,18 @@ export default class MyPlugin extends Plugin {
 	async saveSettings() {
 		await this.saveData(this.settings);
 	}
+
+	/**
+	 * エディタオブジェクトから文字列を取得し、文字のスイッチを行う
+	 * @param editor エディタオブジェクト
+	 */
+	switchCharactor(editor: Editor){
+		const cursor: EditorPosition = editor.getCursor("from");
+		const text: string = editor.getLine(cursor.line);
+		const check: string = text.slice(cursor.ch);
+		editor.setLine(cursor.line, `${text.slice(0,cursor.ch - 1)}${switchChar(check, this.settings.charactors.split("\n"))}`);
+	}
+
 }
 
 class SettingTab extends PluginSettingTab {
