@@ -17,7 +17,7 @@ main.js
 
 # obsidian
 data.json
-/DevTest/.obsidian/
+/DevTest/.obsidian/plugins
 !/DevTest/.obsidian/plugins/.keep
 
 # Exclude macOS Finder (System Explorer) View States
