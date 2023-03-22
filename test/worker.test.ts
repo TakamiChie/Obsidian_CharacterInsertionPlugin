@@ -18,4 +18,16 @@ describe("switchChar", () => {
     expect(switchChar("", charactors)).toBe("A");
   });
 
+  it("準正常:キャラクタリストが空", () => {
+    expect(switchChar("", [])).toBe("");
+  });
+
+  it("準正常:キャラクタリストが1項目だけかつ、文字列先頭にキャラクタなし", () => {
+    expect(switchChar("", ["A"])).toBe("A");
+  });
+
+  it("準正常:キャラクタリストが1項目だけかつ、文字列先頭にキャラクタあり", () => {
+    expect(switchChar("A", ["A"])).toBe("A");
+  });
+
 });

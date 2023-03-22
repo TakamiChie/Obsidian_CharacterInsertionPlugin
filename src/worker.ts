@@ -7,13 +7,15 @@
  * @returns 処理済みの文字列
  */
 export function switchChar(astring: string, characterList: Array<string>){
-  let ret: string;
-  const index: number = characterList.findIndex(c => astring.startsWith(c));
-  if(index == -1){
-    ret = `${characterList[0]}${astring}`;
-  }else{
-    const next: string = characterList[(index + 1) % characterList.length];
-    ret = `${next}${astring.slice(next.length)}`;
+  let ret: string = astring;
+  if(characterList.length > 0){
+    const index: number = characterList.findIndex(c => astring.startsWith(c));
+    if(index == -1){
+      ret = `${characterList[0]}${astring}`;
+    }else{
+      const next: string = characterList[(index + 1) % characterList.length];
+      ret = `${next}${astring.slice(next.length)}`;
+    }
   }
   return ret;
 }
