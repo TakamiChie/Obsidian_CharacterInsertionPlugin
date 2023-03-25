@@ -21,8 +21,7 @@ export default class MyPlugin extends Plugin {
 			id: 'character-insertion-insert',
 			name: 'Insert / switch characters',
 			editorCallback: (editor: Editor, view: MarkdownView) => {
-				console.log(editor.getSelection());
-				editor.replaceSelection('Sample Editor Command');
+				this.switchCharactor(editor);
 			}
 		});
 
@@ -49,7 +48,8 @@ export default class MyPlugin extends Plugin {
 		const cursor: EditorPosition = editor.getCursor("from");
 		const text: string = editor.getLine(cursor.line);
 		const check: string = text.slice(cursor.ch);
-		editor.setLine(cursor.line, `${text.slice(0,cursor.ch - 1)}${switchChar(check, this.settings.charactors.split("\n"))}`);
+		editor.setLine(cursor.line, `${text.substring(0,cursor.ch)}${switchChar(check, this.settings.charactors.split("\n"))}`);
+		editor.setCursor(cursor);
 	}
 
 }
