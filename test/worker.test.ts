@@ -11,7 +11,7 @@ describe("switchChar", () => {
   });
 
   it("正常系:文字列の先頭にキャラクタリスト最後の項目がある", () => {
-    expect(switchChar("CBCDEF", charactors)).toBe("ABCDEF");
+    expect(switchChar("CBCDEF", charactors)).toBe("BCDEF");
   });
 
   it("準正常:文字列が空", () => {
@@ -27,7 +27,7 @@ describe("switchChar", () => {
   });
 
   it("準正常:キャラクタリストが1項目だけかつ、文字列先頭にキャラクタあり", () => {
-    expect(switchChar("A", ["A"])).toBe("A");
+    expect(switchChar("A", ["A"])).toBe("");
   });
 
 });

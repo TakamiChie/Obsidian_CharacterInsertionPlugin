@@ -12,9 +12,11 @@ export function switchChar(astring: string, characterList: Array<string>){
     const index: number = characterList.findIndex(c => astring.startsWith(c));
     if(index == -1){
       ret = `${characterList[0]}${astring}`;
-    }else{
-      const next: string = characterList[(index + 1) % characterList.length];
+    }else if(index < characterList.length - 1){
+      const next: string = characterList[index + 1];
       ret = `${next}${astring.slice(next.length)}`;
+    }else{
+      ret = astring.slice(characterList[index].length);
     }
   }
   return ret;
