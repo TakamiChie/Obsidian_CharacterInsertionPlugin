@@ -1,1 +1,11 @@
-{}
+{
+  "character-insertion-plugin:character-insertion-insert": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "Enter"
+    }
+  ]
+}
