@@ -14,7 +14,7 @@ export function switchChar(astring: string, characterList: Array<string>){
       ret = `${characterList[0]}${astring}`;
     }else if(index < characterList.length - 1){
       const next: string = characterList[index + 1];
-      ret = `${next}${astring.slice(next.length)}`;
+      ret = `${next}${astring.slice(characterList[index].length)}`;
     }else{
       ret = astring.slice(characterList[index].length);
     }
