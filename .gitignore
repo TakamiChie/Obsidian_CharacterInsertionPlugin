@@ -19,6 +19,7 @@ main.js
 data.json
 /DevTest/.obsidian/plugins
 !/DevTest/.obsidian/plugins/.keep
+src/manifest.json
 
 # Exclude macOS Finder (System Explorer) View States
 .DS_Store
