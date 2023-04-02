@@ -17,6 +17,16 @@ export default class MyPlugin extends Plugin {
 	async onload() {
 		await this.loadSettings();
 
+		// This creates an icon in the left ribbon.
+		const ribbonIconEl = this.addRibbonIcon('edit', 'Insert / switch characters', (evt: MouseEvent) => {
+			const view = this.app.workspace.getActiveViewOfType(MarkdownView);
+			if(view){
+				this.switchCharactor(view.editor);
+			}
+		});
+		// Perform additional things with the ribbon
+		ribbonIconEl.addClass('character-insertion-insert-class');
+
 		this.addCommand({
 			id: 'character-insertion-insert',
 			name: 'Insert / switch characters',
