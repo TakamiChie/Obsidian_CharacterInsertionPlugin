@@ -3,16 +3,16 @@ import { switchChar } from 'worker';
 
 // Remember to rename these classes and interfaces!
 
-interface MyPluginSettings {
+interface CharacterInsertionPluginSettings {
 	charactors: string;
 }
 
-const DEFAULT_SETTINGS: MyPluginSettings = {
+const DEFAULT_SETTINGS: CharacterInsertionPluginSettings = {
 	charactors: [..."⭐🔶🔷🟢👍"].join("\n")
 }
 
-export default class MyPlugin extends Plugin {
-	settings: MyPluginSettings;
+export default class CharacterInsertionPlugin extends Plugin {
+	settings: CharacterInsertionPluginSettings;
 
 	async onload() {
 		await this.loadSettings();
@@ -65,9 +65,9 @@ export default class MyPlugin extends Plugin {
 }
 
 class SettingTab extends PluginSettingTab {
-	plugin: MyPlugin;
+	plugin: CharacterInsertionPlugin;
 
-	constructor(app: App, plugin: MyPlugin) {
+	constructor(app: App, plugin: CharacterInsertionPlugin) {
 		super(app, plugin);
 		this.plugin = plugin;
 	}
