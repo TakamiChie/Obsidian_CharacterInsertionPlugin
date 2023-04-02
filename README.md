@@ -2,6 +2,8 @@
 
 A plug-in that inserts a specified character in advance at the cursor position.
 
+![demo](demo.gif)
+
 Insert the character set in advance in the cursor position in the settings.
 
 For example, if the value of the specified "input charactor" is the following value...
