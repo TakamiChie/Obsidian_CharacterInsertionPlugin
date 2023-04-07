@@ -28,7 +28,7 @@ export default class CharacterInsertionPlugin extends Plugin {
 		ribbonIconEl.addClass('character-insertion-insert-class');
 
 		this.addCommand({
-			id: 'character-insertion-insert',
+			id: 'insert',
 			name: 'Insert / switch characters',
 			editorCallback: (editor: Editor, view: MarkdownView) => {
 				this.switchCharactor(editor);
