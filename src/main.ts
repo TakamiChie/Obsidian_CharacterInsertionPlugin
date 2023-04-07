@@ -1,7 +1,5 @@
-import { App, Editor, EditorPosition, MarkdownView, Modal, Notice, Plugin, PluginSettingTab, Setting } from 'obsidian';
+import { App, Editor, EditorPosition, MarkdownView, Plugin, PluginSettingTab, Setting } from 'obsidian';
 import { switchChar } from 'worker';
-
-// Remember to rename these classes and interfaces!
 
 interface CharacterInsertionPluginSettings {
 	charactors: string;
